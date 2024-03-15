@@ -70,7 +70,7 @@ const MealHistory = (props: PropsType) => {
 					})
 				}
 				{
-					!loading &&
+					loading &&
 					Array.from({
 						length: 8, // Create 8 indexes with undefined values
 					},
