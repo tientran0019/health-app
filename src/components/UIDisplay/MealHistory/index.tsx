@@ -70,7 +70,7 @@ const MealHistory = (props: PropsType) => {
 					})
 				}
 				{
-					loading &&
+					!loading &&
 					Array.from({
 						length: 8, // Create 8 indexes with undefined values
 					},
@@ -78,7 +78,7 @@ const MealHistory = (props: PropsType) => {
 						return k; // Return k(ey) as value for this index
 					},
 					).map((el) => {
-						return <Skeleton.Image active key={el} className="w-full  h-[250px]" />;
+						return <Skeleton.Image active key={el} className="w-full h-[250px]" style={{ height: '250px', width: 'auto' }} />;
 					})
 				}
 			</div>
