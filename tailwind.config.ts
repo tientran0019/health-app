@@ -1,20 +1,122 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
+
+const COLORS = {
+	light: {
+		DEFAULT: '#ffffff',
+	},
+	dark: {
+		'400': '#777777',
+		'500': '#414141',
+		DEFAULT: '#414141',
+		'600': '#2E2E2E',
+	},
+	primary: {
+		DEFAULT: '#EA6C00',
+		'50': '#fef3e0',
+		'100': '#fde0b2',
+		'200': '#fccc80',
+		'300': '#FFCC21',
+		'400': '#FF963C',
+		'500': '#EA6C00',
+		'600': '#e15300',
+		'700': '#ffb400',
+		'800': '#ffa100',
+		'900': '#ff9000',
+		'950': '#ff6f00',
+	},
+	secondary: {
+		DEFAULT: '#8FE9D0',
+		'100': '#e4f9f4',
+		'200': '#bcf1e2',
+		'300': '#8FE9D0',
+		'400': '#65debc',
+		'500': '#4dd3ad',
+		'600': '#44c89f',
+		'700': '#3fb991',
+		'800': '#38a781',
+		'900': '#329672',
+		'950': '#2a7856',
+	},
+	success: {
+		DEFAULT: '#14A44D',
+		50: '#EAFCF2',
+		100: '#D6FAE4',
+		200: '#ACF5C9',
+		300: '#83F0AE',
+		400: '#59EA93',
+		500: '#1CE26B',
+		600: '#118C42',
+		700: '#0E7537',
+		800: '#0C5D2C',
+		900: '#094621',
+	},
+	danger: {
+		DEFAULT: '#DC4C64',
+		50: '#FCF2F4',
+		100: '#FAE5E9',
+		200: '#F5CCD3',
+		300: '#F0B2BD',
+		400: '#EB99A6',
+		500: '#E37285',
+		600: '#D42A46',
+		700: '#B0233A',
+		800: '#8D1C2F',
+		900: '#6A1523',
+	},
+	warning: {
+		DEFAULT: '#E4A11B',
+		50: '#FDF8EF',
+		100: '#FBF2DE',
+		200: '#F7E4BE',
+		300: '#F4D79D',
+		400: '#F0C97D',
+		500: '#EAB54C',
+		600: '#C48A17',
+		700: '#A37313',
+		800: '#825C0F',
+		900: '#62450B',
+	},
+	info: {
+		DEFAULT: '#54B4D3',
+		50: '#F3FAFC',
+		100: '#E7F4F9',
+		200: '#CEE9F2',
+		300: '#B6DFEC',
+		400: '#9ED4E6',
+		500: '#79C4DC',
+		600: '#34A4CA',
+		700: '#2B89A8',
+		800: '#236D86',
+		900: '#1A5265',
+	},
+};
 
 const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-    },
-  },
-  plugins: [],
+	content: [
+		'./src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+		'./src/components/**/*.{js,ts,jsx,tsx,mdx}',
+		'./src/containers/**/*.{js,ts,jsx,tsx,mdx}',
+		'./src/app/**/*.{js,ts,jsx,tsx,mdx}',
+	],
+	theme: {
+		container: {
+			center: true,
+			padding: {
+				DEFAULT: '1rem',
+				sm: '2rem',
+				lg: '4rem',
+				xl: '5rem',
+				'2xl': '6rem',
+			},
+		},
+		extend: {
+			colors: COLORS,
+			fontFamily: {
+				inter: ['Inter', 'sans-serif'],
+				noto: ['Noto Sans JP', 'sans-serif'],
+			},
+		},
+	},
+	plugins: [],
 };
 export default config;

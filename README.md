@@ -1,20 +1,54 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+View the [Demo](https://boilerplate-nextjs-antd-tailwindcss.vercel.app/)
+
+## Features
+- [x] [React 18x](https://reactjs.org)
+- [x] [Nextjs 14x](https://nextjs.org/)
+- [x] [Antd 5x](https://ant.design/)
+- [x] [Tailwind CSS 3x](https://tailwindcss.com/) - SCSS/CSS Module
+- [x] [Eslint](https://eslint.org/)
+
 ## Getting Started
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Check if your [Node.js](https://nodejs.org/) version is v18.17 or later..
+2. Clone this repository.
+3. Run `yarn` to install the dependencies.
+4. Run `yarn dev` for development.
+5. Run `yarn build` and `yarn start` for production.
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Environment Variables
+
+By default all environment variables loaded through `.env` are only available in the Node.js environment, meaning they won't be exposed to the browser.
+
+In order to expose a variable to the browser you have to prefix the variable with `NEXT_PUBLIC_.` For example:
+
+```js
+PORT=3000
+
+APP_ENV=development
+
+NEXT_PUBLIC_API_URL=http://localhost:$PORT/api
+NEXT_PUBLIC_WEB_URL=http://localhost:$PORT
+```
+
+This loads process.env.NEXT_PUBLIC_ANALYTICS_ID into the Node.js environment automatically, allowing you to use it anywhere in your code. The value will be inlined into JavaScript sent to the browser because of the NEXT_PUBLIC_ prefix. This inlining occurs at build time, so your various NEXT_PUBLIC_ envs need to be set when the project is built.
+
+##### Default Environment Variables
+In general only one `.env` file is needed. However, sometimes you might want to add some defaults for the development (next dev) or production (next start) environment.
+
+Allows you to set defaults in `.env` (all environments), `.env.development` (development environment), `and .env.production` (production environment), `and .env.staging` (staging environment).
+
+`.env` always overrides the defaults set.
+
+Reference in the file `.env-example`.
+
+[Learn more](https://nextjs.org/docs/basic-features/environment-variables)
+
+
+```
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 

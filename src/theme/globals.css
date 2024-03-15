@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+	.text-balance {
+		text-wrap: balance;
+	}
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans+JP:wght@100..900&display=swap');
+
+html, * {
+	font-family: "Inter", sans-serif;
+	color: #414141;
+	font-weight: 300;
+}
+
+body {
+	@apply text-base;
+
+	font-family: "Inter", sans-serif;
+}
+
+.bg-gradient {
+	@apply bg-gradient-to-tr from-primary-300 to-primary-400
+}
+
+.bg-gradient:hover {
+	@apply bg-gradient-to-tr from-primary-400 to-primary-800
+}
+
+.bg-gradient:active {
+	@apply bg-gradient-to-tr from-primary-400 to-primary-900
+}
